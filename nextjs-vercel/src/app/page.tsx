@@ -27,10 +27,9 @@ export default function Home() {
           </a>
         </div>
       </div>
-
-
+      <div>
       <h1>SkytrX - TestPage</h1>
-
+      </div>
       <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
