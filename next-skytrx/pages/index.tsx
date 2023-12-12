@@ -8,7 +8,7 @@ const Home: React.FC = () => {
       <Nbar />  {/* ここでNbarコンポーネントを使用 */}
       <h1>Index</h1>
       <h4>root - indextest</h4>
-      <h4>test</h4>
+      <a href="https://skytrx2023.vercel.app/test">test</a>
     </div>
   );
 };
