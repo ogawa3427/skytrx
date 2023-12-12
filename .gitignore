@@ -5,6 +5,7 @@ node_modules
 skytrx/
 
 thirdweb_era_gallery/.next/
+next-skytrx/.next/
 
 # local env files
 .env.local
