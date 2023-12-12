@@ -1,5 +1,6 @@
 import React from 'react';
 import Nbar from '../components/Nbar'; // Nbarコンポーネントをインポート
+import Dashboard from '../components/Dashboard';
 
 const Home: React.FC = () => {
   return (
