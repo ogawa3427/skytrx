@@ -5,6 +5,8 @@ import BasicTabs from '../components/Tab';
 import BasicTabsB from '../components/TabB';
 import styled from 'styled-components';
 
+import { ThirdwebNftMedia, useContract, useNFT } from "@thirdweb-dev/react";
+
 function getGreetingBasedOnTime() {
   const hours = new Date().getHours();
   

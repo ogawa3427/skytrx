@@ -4,6 +4,8 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+import { ThirdwebNftMedia, useContract, useNFT } from "@thirdweb-dev/react";
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -37,8 +39,14 @@ function a11yProps(index: number) {
   };
 }
 
-export default function BasicTabs() {
+const BasicTabs = () => {
+  const { contract } = useContract("0x04b392cc6cda280c41e6fd637359f6d7f3ecbc30");
+  const { data: nft, isLoading, error} = useNFT(contract, "9678");
+
   const [value, setValue] = React.useState(0);
+  
+  if (isLoading) return <div>Loading...</div>;
+  if (error || !nft) return <div>Error</div>; 
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -54,14 +62,16 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <img src="/images/zunda.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <ThirdwebNftMedia metadata={nft.metadata} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <img src="/images/zunda.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         Item Three
       </CustomTabPanel>
     </Box>
   );
-}
+};
+
+export default BasicTabs;

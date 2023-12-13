@@ -31,11 +31,10 @@ const FlexContainer = styled.div`
 `;
 
 const Test = () => {
+
     return (
       <div>
         <ResponsiveAppBar />
-        <h2>Funding</h2>
-        <DataTable />
       </div>
     );
   };
