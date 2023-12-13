@@ -34,10 +34,10 @@ const Home = () => {
         <ResponsiveAppBar />
         <h4>{getGreetingBasedOnTime()}、清水さん</h4>
         <FlexContainer>
-          <div style={{ flex: '1 1 0', padding: '0 32px', width: '100%' }}>
+          <div style={{ flex: '1 1 0', padding: '0 32px', width: '50%' }}>
             <BasicTabs />
           </div>
-          <div style={{ flex: '1 1 0', padding: '0 32px', width: '100%' }}>
+          <div style={{ flex: '1 1 0', padding: '0 32px', width: '50%' }}>
             <BasicTabsB />
           </div>
         </FlexContainer>
