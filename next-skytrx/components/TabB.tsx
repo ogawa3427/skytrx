@@ -54,7 +54,7 @@ export default function BasicTabsB() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <img src="/images/zunda.png" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <img src="/images/carry.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Item Two

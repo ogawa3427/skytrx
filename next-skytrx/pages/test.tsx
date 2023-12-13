@@ -5,6 +5,8 @@ import BasicTabs from '../components/Tab.tsx';
 import BasicTabsB from '../components/TabB.tsx';
 import styled from 'styled-components';
 
+import DataTable from '../components/DataTable.tsx';
+
 function getGreetingBasedOnTime() {
   const hours = new Date().getHours();
   
@@ -32,17 +34,8 @@ const Test = () => {
     return (
       <div>
         <ResponsiveAppBar />
-        <h4>{getGreetingBasedOnTime()}、清水さん</h4>
-        <FlexContainer>
-          <div style={{ flex: '1 1 0', padding: '0 32px', width: '100%' }}>
-            <BasicTabs />
-          </div>
-          <div style={{ flex: '1 1 0', padding: '0 32px', width: '100%' }}>
-            <BasicTabsB />
-          </div>
-        </FlexContainer>
-        <h1>Test</h1>
-        <Button variant="contained">Test</Button>
+        <h2>Funding</h2>
+        <DataTable />
       </div>
     );
   };

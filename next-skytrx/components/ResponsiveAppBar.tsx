@@ -14,12 +14,12 @@ export default function NavigationBar() {
           SkytrX
         </Typography>
         <Box>
-          <Button color="inherit" href="https://skytrx2023.vercel.app/">Home</Button>
-          <Button color="inherit">Papers</Button>
-          <Button color="inherit">Funding</Button>
-          <Button color="inherit">supporters</Button>
-          <Button color="inherit">Discovery</Button>
-          <Button color="inherit">Profile</Button>
+          <Button color="inherit" href="/">Home</Button>
+          <Button color="inherit" href="/papers">Papers</Button>
+          <Button color="inherit" href="/funding">Funding</Button>
+          <Button color="inherit" href="/supporters">Supporters</Button>
+          <Button color="inherit" href="/discovery">Discovery</Button>
+          <Button color="inherit" href="/profile">Profile</Button>
         </Box>
       </Toolbar>
     </AppBar>
