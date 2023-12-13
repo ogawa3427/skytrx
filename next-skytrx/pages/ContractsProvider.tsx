@@ -14,3 +14,4 @@ export const ContractsProvider: React.FC<ContractsProviderProps> = ({ children }
     </ContractsContext.Provider>
   );
 };
+export default ContractsProvider;

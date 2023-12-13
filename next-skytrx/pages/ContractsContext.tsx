@@ -5,3 +5,4 @@ export const ContractsContext = React.createContext({
     searchContract: '', 
     setSearchContract: (value: string) => {},
   });
+  export default ContractsContext;
