@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import { ContractsProvider } from './ContractsProvider';
-import { ZksyncEraTestnet } from "@thirdweb-dev/chains";
+import { ethereum } from "@thirdweb-dev/chains";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -10,7 +10,7 @@ import { ZksyncEraTestnet } from "@thirdweb-dev/chains";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider activeChain={ZksyncEraTestnet}>
+    <ThirdwebProvider activeChain={ethereum}>
       <ContractsProvider>
         <Component {...pageProps} />
       </ContractsProvider>
