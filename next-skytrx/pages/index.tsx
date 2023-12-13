@@ -1,18 +1,48 @@
 import React from 'react';
-import Nbar from '../components/Nbar'; // Nbarコンポーネントをインポート
-import Dashboard from '../components/Dashboard';
+import Button from '@mui/material/Button';
+import ResponsiveAppBar from '../components/ResponsiveAppBar.tsx';
+import BasicTabs from '../components/Tab.tsx';
+import BasicTabsB from '../components/TabB.tsx';
+import styled from 'styled-components';
 
-const Home: React.FC = () => {
-  return (
-    <div>
-      <Nbar />  {/* ここでNbarコンポーネントを使用 */}
-      <h1>Index</h1>
-      <h4>root - indextest</h4>
-      <a href="https://skytrx2023.vercel.app/test">test</a>
-        <br />
-      <a href="localhost:3000/test">test - dev</a>
-    </div>
-  );
-};
+function getGreetingBasedOnTime() {
+  const hours = new Date().getHours();
+  
+  if (hours < 12) {
+    return 'おはようございます';
+  } else if (hours >= 12 && hours < 18) {
+    return 'こんにちは';
+  } else {
+    return 'こんばんは';
+  }
+}
 
-export default Home;
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
+
+const Home = () => {
+    return (
+      <div>
+        <ResponsiveAppBar />
+        <h4>{getGreetingBasedOnTime()}、清水さん</h4>
+        <FlexContainer>
+          <div style={{ flex: '1 1 0', padding: '0 32px', width: '100%' }}>
+            <BasicTabs />
+          </div>
+          <div style={{ flex: '1 1 0', padding: '0 32px', width: '100%' }}>
+            <BasicTabsB />
+          </div>
+        </FlexContainer>
+      </div>
+    );
+  };
+  
+  export default Home;

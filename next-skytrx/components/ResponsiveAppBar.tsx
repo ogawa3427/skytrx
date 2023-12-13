@@ -14,7 +14,7 @@ export default function NavigationBar() {
           SkytrX
         </Typography>
         <Box>
-          <Button color="inherit">Home</Button>
+          <Button color="inherit" href="https://skytrx2023.vercel.app/">Home</Button>
           <Button color="inherit">Papers</Button>
           <Button color="inherit">Funding</Button>
           <Button color="inherit">supporters</Button>
