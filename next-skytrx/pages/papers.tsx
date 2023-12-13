@@ -1,8 +1,8 @@
 import React from 'react';
-import ResponsiveAppBar from '../components/ResponsiveAppBar.tsx';
+import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import styled from 'styled-components';
 
-import DataTable from '../components/DataTable.tsx';
+import DataTable from '../components/DataTable';
 
 const Papers = () => {
     return (

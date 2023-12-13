@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import ResponsiveAppBar from '../components/ResponsiveAppBar.tsx';
-import BasicTabs from '../components/Tab.tsx';
-import BasicTabsB from '../components/TabB.tsx';
+import ResponsiveAppBar from '../components/ResponsiveAppBar';
+import BasicTabs from '../components/Tab';
+import BasicTabsB from '../components/TabB';
 import styled from 'styled-components';
 
-import DataTable from '../components/DataTable.tsx';
+import DataTable from '../components/DataTable';
 
 function getGreetingBasedOnTime() {
   const hours = new Date().getHours();
