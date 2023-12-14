@@ -6,22 +6,28 @@ import CommentList from '../../components/CommentList';
 import React from 'react';
 import papers from '../../public/data/papers.json';
 
-const A = () => {
+const Article = () => {
   const router = useRouter();
   const currentpath = router.asPath;
   const doi = currentpath.replace('/article/', '');
 
   const baselist = [...papers];
 
-  // DOIに基づいて論文を選択
-  let article = [];
-  article = baselist.filter(paper => paper.doi === doi);
-  console.log(article[0]);
-  const ref = article[0].reference;
-  console.log(ref);
+  // ページが最初にロードされたときに、router.query が空の可能性があるため、
+  // このチェックを行います。
+  if (!router.isReady) {
+    return <div>Loading...</div>; // ロード中の表示
+  }
+
+  let article = baselist.filter(paper => paper.doi === doi);
+  let thearticle = article.length > 0 ? article[0] : null;
   let references = [];
-  references = baselist.filter(paper => ref.includes(paper.doi));
-  console.log(references);
+
+  if (thearticle && thearticle.reference) {
+    // 参照論文の検索
+    references = thearticle.reference.map(ref => baselist.find(paper => paper.doi === ref));
+  }
+  //references = article.filter(paper => ref.includes(paper.doi));
 
   return (
     <div>
@@ -41,4 +47,4 @@ const A = () => {
   );
 }
 
-export default A;
+export default Article;
