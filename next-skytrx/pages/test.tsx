@@ -6,6 +6,8 @@ import BasicTabsB from '../components/TabB';
 import styled from 'styled-components';
 
 import DataTable from '../components/DataTable';
+import BibUnit from '../components/BibUnit';
+import SearchBox from '../components/SearchBox';
 
 function getGreetingBasedOnTime() {
   const hours = new Date().getHours();
@@ -35,6 +37,8 @@ const Test = () => {
     return (
       <div>
         <ResponsiveAppBar />
+        <SearchBox />
+        <BibUnit />
       </div>
     );
   };
