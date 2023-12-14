@@ -7,6 +7,8 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 import Cookies from 'js-cookie';
+import IconButton from '@mui/material/IconButton';
+import Icon from '@mui/material/Icon';
 
 export default function Navbar({ isLoggedIn }) {
   const handleLogin = () => {
@@ -19,6 +21,12 @@ export default function Navbar({ isLoggedIn }) {
     window.location.reload();
   };
 
+  const MyIcon = () => (
+    <Icon>
+      <img src="/images/tomato.jpg" alt="myicon" style={{ borderRadius: '450%', border: '2px solid #000' }} />
+    </Icon>
+  );
+
   return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="default" style={{ backgroundColor: 'gray' }}>
@@ -28,9 +36,16 @@ export default function Navbar({ isLoggedIn }) {
               Science Chain
             </Link>
           </Typography>
-            <Stack direction="column" spacing={1} style={{ marginTop: '8px', marginBottom: '8px' }}>
+            <Stack direction="row" spacing={1} style={{ marginTop: '8px', marginBottom: '8px' }}>
               {isLoggedIn ? (
+              <>
                 <Button color="inherit" style={{ backgroundColor: '#505050', color: '#FFFFFF', borderRadius: '25px', border: '2px solid #FFFFFF', textTransform: 'none', fontFamily: 'Times New Roman, serif', padding: '2px 50px' }} onClick={handleLogout}>Logout</Button>
+                <Link href="/mypage">
+                  <IconButton style={{ border: '2px solid #000' }}>
+                    <MyIcon />
+                  </IconButton>
+                </Link>
+              </>
               ) : (
                 <>
                   <Button color="inherit" style={{ backgroundColor: '#505050', color: '#FFFFFF', borderRadius: '25px', border: '2px solid #FFFFFF', textTransform: 'none', fontFamily: 'Times New Roman, serif', padding: '2px 50px' }} onClick={handleLogin}>Login</Button>
