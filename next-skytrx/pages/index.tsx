@@ -10,13 +10,19 @@ import { Grid } from '@mui/material';
 
 const Home = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
-
+    const [lstatus, setLstatus] = useState('reviewedWaiting'); // useStateを使用して状態を管理
     useEffect(() => {
         const token = Cookies.get('loggedin');
         if (!token || token == 'false') {
             setIsLoggedIn(false);
         } else {
             setIsLoggedIn(true);
+        }
+        const lstatus = Cookies.get('enoughor');
+        if (!lstatus || lstatus == 'reviewedWaiting') {
+            setLstatus('reviewedWaiting');
+        } else {
+            setLstatus('reviewedEnough');
         }
     }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
 
@@ -28,7 +34,7 @@ const Home = () => {
         <SearchBox />
         {isLoggedIn ? <TwoToggle /> : <OneToggle />}
       </Grid>
-      <BibUnit articles={papers} />
+      <BibUnit articles={papers} status={lstatus} />
     </div>
   );
 }

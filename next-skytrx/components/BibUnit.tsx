@@ -5,7 +5,8 @@ import users from '../public/data/users.json';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
-export default function BibUnit({ articles }) {
+
+export default function BibUnit({ articles, status }) {
   return (
     <div>
       {articles.map((article, index) => (
@@ -24,32 +25,39 @@ export default function BibUnit({ articles }) {
             {/* 左側のコンテナ */}
             <Grid item xs={12} sm={6} container direction="column" spacing={2}>
               <Grid item>
-                <Grid container alignItems="center" spacing={1}>
-                  <Typography variant="h6">Impact</Typography>
-                  <Rating name="impact-rating" value={parseFloat(article.impact)} readOnly />
-                </Grid>
-                <Grid container alignItems="center" spacing={1}>
-                  <Grid item>
-                    <VisibilityIcon />
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="body2">{article.view}</Typography>
-                  </Grid>
-                </Grid>
-                <Grid container alignItems="center" spacing={1}>
-                  <Grid item>
-                    <EditIcon />
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="body2">{article.edit}</Typography>
-                  </Grid>
-                  <Grid item>
-                    <ChatBubbleIcon />
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="body2">{article.comment}</Typography>
-                  </Grid>
-                </Grid>
+                  {!(status == 'reviewedWaiting') ? (
+                    <>
+                      <Grid container alignItems="center" spacing={1}>
+                        <Typography variant="h6">Impact</Typography>
+                        <Rating name="impact-rating" value={parseFloat(article.impact)} readOnly />
+                      </Grid>
+                      <Grid container alignItems="center" spacing={1}>
+                        <Grid item>
+                          <VisibilityIcon />
+                        </Grid>
+                        <Grid item>
+                          <Typography variant="body2">{article.view}</Typography>
+                        </Grid>
+                      </Grid>
+                      <Grid container alignItems="center" spacing={1}>
+                        <Grid item>
+                          <EditIcon />
+                        </Grid>
+                        <Grid item>
+                          <Typography variant="body2">{article.edit}</Typography>
+                        </Grid>
+                        <Grid item>
+                          <ChatBubbleIcon />
+                        </Grid>
+                        <Grid item>
+                          <Typography variant="body2">{article.comment}</Typography>
+                        </Grid>
+                      </Grid>
+                    </>
+                  ) : (
+                    <h2>waiting</h2>
+                  )}
+                
               </Grid>
             </Grid>
 
@@ -59,7 +67,7 @@ export default function BibUnit({ articles }) {
                 <Typography variant="body2">Novelty</Typography>
                 <Rating name="novelty" value={parseFloat(article.novelty)} readOnly />
               </Grid>
-            <Grid item container alignItems="center" spacing={1}>
+              <Grid item container alignItems="center" spacing={1}>
                 <Typography variant="body2">Originality</Typography>
                 <Rating name="originality" value={parseFloat(article.originality)} readOnly />
               </Grid>
