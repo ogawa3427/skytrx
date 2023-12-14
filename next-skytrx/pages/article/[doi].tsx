@@ -4,8 +4,9 @@ import BibUnit from '../../components/BibUnit';
 import CommentList from '../../components/CommentList';
 import Typography from '@mui/material/Typography';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import papers from '../../public/data/papers.json';
+import Cookies from 'js-cookie';
 
 const Article = () => {
   const router = useRouter();
@@ -13,6 +14,17 @@ const Article = () => {
   const doi = currentpath.replace('/article/', '');
 
   const baselist = [...papers];
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
+
+  useEffect(() => {
+    const token = Cookies.get('loggedin');
+    if (!token || token == 'false') {
+      setIsLoggedIn(false);
+    } else {
+      setIsLoggedIn(true);
+    }
+  }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
 
   // ページが最初にロードされたときに、router.query が空の可能性があるため、
   // このチェックを行います。
@@ -31,7 +43,7 @@ const Article = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} />
       <BibUnit articles={article} />
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <div style={{ flex: 4, paddingRight: '10px' }}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import Navbar from '../components/Nbar';
 
@@ -7,21 +7,29 @@ import PdfViewer from '../components/PdfViewer';
 import CommentList from '../components/CommentList';
 
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 const Test = () => {
-    const router = useRouter();
-    const currentpath = router.asPath;
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
 
-    return (
-      <div>
-        <h2>{currentpath}</h2>
-        <Navbar />
-        <div style={{ margin: '8px' }}></div>
-        <SearchBox />
-        <CommentList toSearchProp="2" />
-        <PdfViewer />
-      </div>
-    );
-  };
-  
-  export default Test;
+  useEffect(() => {
+    const token = Cookies.get('loggedin');
+    if (!token || token == 'false') {
+      setIsLoggedIn(false);
+    } else {
+      setIsLoggedIn(true);
+    }
+  }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
+
+  return (
+    <div>
+      <Navbar isLoggedIn={isLoggedIn} />
+      <div style={{ margin: '8px' }}></div>
+      <SearchBox />
+      <CommentList toSearchProp="2" />
+      <PdfViewer />
+    </div>
+  );
+};
+
+export default Test;

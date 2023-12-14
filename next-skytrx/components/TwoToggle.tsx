@@ -3,12 +3,16 @@ import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Box } from '@mui/system';
 
-export default function TwoToggle() {
-  const [selectedValue, setSelectedValue] = useState('reviewedWaiting');
+import Cookies from 'js-cookie';
 
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+export default function TwoToggle() {
+  let enoughor = "reviewedWaiting";
+  const token = Cookies.get('enoughor');
+  if (!token||token=='reviewedWaiting') {
+    enoughor = "reviewedWaiting";
+  } else {
+    enoughor = "reviewedEnough";
+  }
 
   return (
     <Box
@@ -40,8 +44,15 @@ export default function TwoToggle() {
         <FormControlLabel
           control={
             <Radio
-              checked={selectedValue === 'reviewedEnough'}
-              onChange={handleChange}
+              checked={enoughor === 'reviewedEnough'}
+              onChange={() => {
+                if (enoughor === 'reviewedWaiting') {
+                  Cookies.set('enoughor', 'reviewedEnough');
+                } else {
+                  Cookies.set('enoughor', 'reviewedWaiting');
+                }
+                window.location.reload();
+              }}
               value="reviewedEnough"
               name="review"
               color="primary"
@@ -60,8 +71,15 @@ export default function TwoToggle() {
         <FormControlLabel
           control={
             <Radio
-              checked={selectedValue === 'reviewedWaiting'}
-              onChange={handleChange}
+              checked={enoughor === 'reviewedWaiting'}
+              onChange={() => {
+                if (enoughor === 'reviewedWaiting') {
+                  Cookies.set('enoughor', 'reviewedEnough');
+                } else {
+                  Cookies.set('enoughor', 'reviewedWaiting');
+                }
+                window.location.reload();
+              }}
               value="reviewedWaiting"
               name="review"
               color="primary"

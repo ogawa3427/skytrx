@@ -7,25 +7,18 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 import Cookies from 'js-cookie';
-import { AuthContext } from '../pages/index';
 
-export default function Navbar() {
-  const { isLoggedIn, setIsLoggedIn } = React.useContext(AuthContext);
-
-  const handleLogout = () => {
-    Cookies.set('loggedin', 'false');
-    setIsLoggedIn(false);
-    window.location.reload();
-  };
-
+export default function Navbar({ isLoggedIn }) {
   const handleLogin = () => {
     Cookies.set('loggedin', 'true');
-    setIsLoggedIn(true);
+    window.location.reload();
+  };
+  const handleLogout = () => {
+    Cookies.set('loggedin', 'false');
     window.location.reload();
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, handleLogout, handleLogin }}>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="default" style={{ backgroundColor: 'gray' }}>
           <Toolbar>
@@ -47,6 +40,5 @@ export default function Navbar() {
           </Toolbar>
         </AppBar>
       </Box>
-    </AuthContext.Provider>
   );
 }
