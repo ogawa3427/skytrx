@@ -15,11 +15,10 @@ export default function BibUnit({ articles }) {
               {article.title}
             </Typography>
           </a>
-          <Typography variant="h6" component="span" style={{ marginLeft: '8px' }}>
+          <Typography variant="h6" component="span" style={{ display: 'block', marginTop: '8px' }}>
             {article.personalid.map(id => users[id] ? users[id].name : "名前なし").join(", ")}
           </Typography>
           <Typography variant="subtitle1">Published on: {article.year}/{article.month}/{article.day}</Typography>
-
           <Grid container spacing={2}>
             {/* 左側のコンテナ */}
             <Grid item xs={12} sm={6} container direction="column" spacing={2}>
