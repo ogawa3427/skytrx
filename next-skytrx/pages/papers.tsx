@@ -1,17 +1,16 @@
 import React from 'react';
-import ResponsiveAppBar from '../components/ResponsiveAppBar';
-import styled from 'styled-components';
+import Navbar from '../components/Nbar';
+import BibUnit from '../components/BibUnit';
+import SearchBox from '../components/SearchBox';
+import papers from '../public/data/papers.json';
 
-import DataTable from '../components/DataTable';
-
-const Papers = () => {
-    return (
-      <div>
-        <ResponsiveAppBar />
-        <h2>Your Papers</h2>
-        <DataTable />
-      </div>
-    );
-  };
-  
-  export default Papers;
+export default function App() {
+  return (
+    <div>
+      <Navbar />
+      <div style={{ margin: '8px' }}></div>
+      <SearchBox />
+      <BibUnit articles={papers} />
+    </div>
+  );
+}

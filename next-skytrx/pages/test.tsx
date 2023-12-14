@@ -39,7 +39,6 @@ const Test = () => {
         <Navbar />
         <div style={{ margin: '8px' }}></div>
         <SearchBox />
-        <BibUnit />
       </div>
     );
   };

@@ -1,8 +1,8 @@
+// BibUnit.jsx
+import React from 'react';
 import { Paper, Typography, Grid, Rating } from '@mui/material';
-import papers from '../public/data/papers.json';
 
-const articles = papers;
-export default function ArticleList() {
+export default function BibUnit({ articles }) {
   return (
     <div>
       {articles.map((article, index) => (
