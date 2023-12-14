@@ -8,18 +8,24 @@ import papers from '../../public/data/papers.json';
 
 const A = () => {
   const router = useRouter();
-  const { doi } = router.query;
+  const currentpath = router.asPath;
+  const doi = currentpath.replace('/article/', '');
 
   const baselist = [...papers];
 
   // DOIに基づいて論文を選択
-  let article = baselist.filter(paper => paper.doi === doi);
+  let article = [];
+  article = baselist.filter(paper => paper.doi === doi);
+  console.log(article[0]);
+  const ref = article[0].reference;
+  console.log(ref);
+  let references = [];
+  references = baselist.filter(paper => ref.includes(paper.doi));
+  console.log(references);
 
-  let refs = article[0].reference;
-
-  let reference = baselist.filter(paper => refs.includes(paper.doi));
   return (
     <div>
+      <h2>{currentpath}</h2>
       <Navbar />
       <BibUnit articles={article} />
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -30,7 +36,7 @@ const A = () => {
           <CommentList toSearchProp={doi} />
         </div> 
       </div>
-      <BibUnit articles={reference} />
+      <BibUnit articles={references} />      
     </div>
   );
 }

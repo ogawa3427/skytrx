@@ -8,15 +8,18 @@ import styled from 'styled-components';
 import DataTable from '../components/DataTable';
 import BibUnit from '../components/BibUnit';
 import SearchBox from '../components/SearchBox';
-
 import PdfViewer from '../components/PdfViewer';
-
 import CommentList from '../components/CommentList';
 
+import { useRouter } from 'next/router';
+
 const Test = () => {
+    const router = useRouter();
+    const currentpath = router.asPath;
 
     return (
       <div>
+        <h2>{currentpath}</h2>
         <Navbar />
         <div style={{ margin: '8px' }}></div>
         <SearchBox />
