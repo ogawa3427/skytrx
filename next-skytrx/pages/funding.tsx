@@ -1,10 +1,11 @@
 import React from "react";
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
+import Navbar from "../components/Nbar";
 
 const Funding = () => {
     return (
       <div>
-        <ResponsiveAppBar />
+        <Navbar />
         <h1>Funding</h1>
       </div>
     );
