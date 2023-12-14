@@ -15,9 +15,9 @@ const A = () => {
   // DOIに基づいて論文を選択
   let article = baselist.filter(paper => paper.doi === doi);
 
-  const refs = article[0].reference;
-  
+  let refs = article[0].reference;
 
+  let reference = baselist.filter(paper => refs.includes(paper.doi));
   return (
     <div>
       <Navbar />
@@ -28,12 +28,11 @@ const A = () => {
         </div>
         <div style={{ flex: 2 }}>
           <CommentList toSearchProp={doi} />
-        </div>
-  
+        </div> 
       </div>
+      <BibUnit articles={reference} />
     </div>
   );
 }
-  
 
 export default A;
