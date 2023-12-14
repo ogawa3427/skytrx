@@ -44,7 +44,7 @@ const Article = () => {
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
-      <BibUnit articles={article} />
+      <BibUnit articles={article} status={'enough'} />
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <div style={{ flex: 4, paddingRight: '10px' }}>
           <img src="/pdfs/pdf.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
@@ -54,7 +54,7 @@ const Article = () => {
         </div> 
       </div>
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>References</Typography>
-      <BibUnit articles={references} />      
+      <BibUnit articles={references} status={'enough'}/>      
     </div>
   );
 }
