@@ -5,15 +5,15 @@ import BibUnit from '../../components/BibUnit';
 import React from 'react';
 import papers from '../../public/data/papers.json';
 
-const A = ({ id }) => {
+const A = () => {
   const router = useRouter();
   const { doi } = router.query;
 
   const baselist = [...papers];
 
-  let article = [];
-  article.push(baselist[id]);
-  console.log(article);
+  // DOIに基づいて論文を選択
+  let article = baselist.filter(paper => paper.doi === doi);
+
   return (
     <div>
       <Navbar />
@@ -22,6 +22,6 @@ const A = ({ id }) => {
       <BibUnit articles={article} />
     </div>
   );
-}
+};
 
 export default A;
