@@ -6,17 +6,11 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
-import Cookies from 'js-cookie'; // js-cookie ライブラリをインポート
+import Cookies from 'js-cookie';
+import { AuthContext } from '../pages/index';
 
 export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false); // ログイン状態を管理するための state
-
-  React.useEffect(() => {
-    const token = Cookies.get('loggedin'); // 'token' はあなたが設定したクッキーの名前です
-    if ((token)||token=='true') {
-      setIsLoggedIn(true);
-    }
-  }, []);
+  const { isLoggedIn, setIsLoggedIn } = React.useContext(AuthContext); // ログイン状態を管理するための state
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -30,7 +24,7 @@ export default function Navbar() {
           <Stack direction="column" spacing={1} style={{ marginTop: '8px', marginBottom: '8px' }}>
             {isLoggedIn ? (
               // ログインしている場合の表示
-              <Button color="inherit" style={{ backgroundColor: '#505050', color: '#FFFFFF', borderRadius: '25px', border: '2px solid #FFFFFF', textTransform: 'none', fontFamily: 'Times New Roman, serif', padding: '2px 50px' }} onClick={() => {Cookies.remove('loggedin', 'false'); window.location.reload();}}>Logout</Button>
+              <Button color="inherit" style={{ backgroundColor: '#505050', color: '#FFFFFF', borderRadius: '25px', border: '2px solid #FFFFFF', textTransform: 'none', fontFamily: 'Times New Roman, serif', padding: '2px 50px' }} onClick={() => {Cookies.set('loggedin', 'false'); window.location.reload();}}>Logout</Button>
             ) : (
               // ログインしていない場合の表示
               <>

@@ -19,7 +19,7 @@ export default function RoundedSearchBar() {
       }}
       sx={{
         '& .MuiOutlinedInput-root': {
-          borderRadius: '50px', // テキストフィールド全体の角を丸くする
+          borderRadius: '20px', // テキストフィールド全体の角を丸くする
           backgroundColor: '#f0f0f0', // テキストフィールドの背景色
           '& fieldset': {
             borderColor: 'transparent', // 枠線を透明にする
@@ -33,6 +33,7 @@ export default function RoundedSearchBar() {
         },
         '& .MuiInputBase-input': {
           color: 'black', // テキストの色を黒に
+          padding: '10px 0', // 上下のパディングを調整
         },
         width: 'fit-content', // テキストフィールドの幅を内容に合わせて調整
       }}
