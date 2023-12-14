@@ -1,6 +1,6 @@
 [
     {
-        "DOI": "1",
+        "doi": "1",
         "title": "Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?",
         "personalid": ["1"],
         "year": "1905",
@@ -16,7 +16,7 @@
         "edit": "1"
     },
     {
-        "DOI": "2",
+        "doi": "2",
         "title": "On the Interaction of Elementary Particles. I",
         "personalid": ["2"],
         "year": "1957",
@@ -32,7 +32,7 @@
         "edit": "2"
     },
     {
-        "DOI": "3",
+        "doi": "3",
         "title": "CP-Violation in the Renormalizable Theory of Weak Interaction",
         "personalid": ["3", "4"],
         "year": "1973",
@@ -48,7 +48,7 @@
         "edit": "3"
     },
     {
-        "DOI": "4",
+        "doi": "4",
         "title": "Induction of pluripotent stem cells from mouse embryonic and adult fibroblast cultures by defined factors.",
         "personalid": ["5"],
         "year": "2012",
@@ -64,7 +64,7 @@
         "edit": "1"
     },
     {
-        "DOI": "5",
+        "doi": "5",
         "title": "高輝度・低消費電力白色光源を可能せしめた高効率青色LEDの発明",
         "personalid": ["6", "7", "8"],
         "year": "2014",
@@ -80,7 +80,7 @@
         "edit": "4"
     },
     {
-        "DOI": "6",
+        "doi": "6",
         "title": "The Use of CRISPR/cas9, ZFNs, TALENs in Genome Editing",
         "personalid": ["9"],
         "year": "2015",
@@ -96,7 +96,7 @@
         "edit": "3"
     },
     {
-        "DOI": "7",
+        "doi": "7",
         "title": "Gravitational Waves in General Relativity. VIII. Waves in Asymptotically Flat Space-Time",
         "personalid": ["10"],
         "year": "1962",
@@ -112,7 +112,7 @@
         "edit": "2"
     },
     {
-        "DOI": "8",
+        "doi": "8",
         "title": "Structure of a β1-adrenergic G-protein-coupled receptor",
         "personalid": ["11"],
         "year": "2007",
@@ -128,7 +128,7 @@
         "edit": "2"
     },
     {
-        "DOI": "9",
+        "doi": "9",
         "title": "Quantum Entanglement in Photon-Atom Systems",
         "personalid": ["12"],
         "year": "2006",
@@ -144,7 +144,7 @@
         "edit": "1"
     },
     {
-        "DOI": "10",
+        "doi": "10",
         "title": "Black Hole Entropy and Soft Hair",
         "personalid": ["13", "14"],
         "year": "2018",
@@ -160,7 +160,7 @@
         "edit": "2"
     },
     {
-        "DOI": "11",
+        "doi": "11",
         "title": "The Expansion of the Universe Observed in the Hubble Deep Field",
         "personalid": ["15"],
         "year": "1996",
@@ -176,7 +176,7 @@
         "edit": "3"
     },
     {
-        "DOI": "12",
+        "doi": "12",
         "title": "The Discovery of the Top Quark",
         "personalid": ["16", "17"],
         "year": "1995",
@@ -192,7 +192,7 @@
         "edit": "1"
     },
     {
-        "DOI": "13",
+        "doi": "13",
         "title": "Nanostructured Materials for Advanced Technological Applications",
         "personalid": ["18"],
         "year": "2009",
@@ -208,7 +208,7 @@
         "edit": "2"
     },
     {
-        "DOI": "14",
+        "doi": "14",
         "title": "High-Efficiency Organic Solar Cells with Nanostructured Layers",
         "personalid": ["19", "20"],
         "year": "2016",
@@ -224,7 +224,7 @@
         "edit": "3"
     },
     {
-        "DOI": "15",
+        "doi": "15",
         "title": "Artificial Intelligence and Robotics",
         "personalid": ["21", "22"],
         "year": "2017",

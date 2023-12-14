@@ -4,7 +4,7 @@ import BibUnit from '../components/BibUnit';
 import SearchBox from '../components/SearchBox';
 import papers from '../public/data/papers.json';
 
-export default function App() {
+const Papers = () => {
   return (
     <div>
       <Navbar />
@@ -14,3 +14,4 @@ export default function App() {
     </div>
   );
 }
+export default Papers;

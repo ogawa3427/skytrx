@@ -1,4 +1,3 @@
-// BibUnit.jsx
 import React from 'react';
 import { Paper, Typography, Grid, Rating } from '@mui/material';
 
@@ -7,7 +6,11 @@ export default function BibUnit({ articles }) {
     <div>
       {articles.map((article, index) => (
         <Paper key={index} elevation={3} sx={{ margin: '16px', padding: '16px' }}>
-          <Typography variant="h5">{article.title}</Typography>
+          <a href={`/article/${article.doi}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography variant="h5" component="span">
+              {article.title}
+            </Typography>
+          </a>
           <Typography variant="subtitle1">Published on: {article.year}/{article.month}/{article.day}</Typography>
           <Grid container>
             <Grid item xs={12} sm={6}>
