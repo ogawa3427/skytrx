@@ -1,5 +1,5 @@
 import { Paper, Typography, Grid, Rating } from '@mui/material';
-import papers from '/public/data/papers.json';
+import papers from '../public/data/papers.json';
 
 const articles = papers;
 export default function ArticleList() {
