@@ -89,7 +89,13 @@ export default function BibUnit({ articles, status }) {
                 </Grid>
               </Grid>
             ) : (
-              <StartReview />
+              <div>
+                {(status == 'reviewing') ? (
+                  <h2>reviewing</h2>
+                ) : (
+                  <StartReview doi={article.doi} />
+                )}
+              </div>
             )}
           </Grid>
         </Paper>
