@@ -1,5 +1,4 @@
 import React from "react";
-import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import Navbar from "../components/Nbar";
 
 const Funding = () => {

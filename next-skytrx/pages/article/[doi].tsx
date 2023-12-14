@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import Navbar from '../../components/Nbar';
 import BibUnit from '../../components/BibUnit';
 import CommentList from '../../components/CommentList';
+import Typography from '@mui/material/Typography';
 
 import React from 'react';
 import papers from '../../public/data/papers.json';
@@ -27,11 +28,9 @@ const Article = () => {
     // 参照論文の検索
     references = thearticle.reference.map(ref => baselist.find(paper => paper.doi === ref));
   }
-  //references = article.filter(paper => ref.includes(paper.doi));
 
   return (
     <div>
-      <h2>{currentpath}</h2>
       <Navbar />
       <BibUnit articles={article} />
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -42,6 +41,7 @@ const Article = () => {
           <CommentList toSearchProp={doi} />
         </div> 
       </div>
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>References</Typography>
       <BibUnit articles={references} />      
     </div>
   );
