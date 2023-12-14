@@ -9,28 +9,8 @@ import DataTable from '../components/DataTable';
 import BibUnit from '../components/BibUnit';
 import SearchBox from '../components/SearchBox';
 
-function getGreetingBasedOnTime() {
-  const hours = new Date().getHours();
-  
-  if (hours < 12) {
-    return 'おはようございます';
-  } else if (hours >= 12 && hours < 18) {
-    return 'こんにちは';
-  } else {
-    return 'こんばんは';
-  }
-}
+import PdfViewer from '../components/PdfViewer';
 
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 -8px;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-  }
-`;
 
 const Test = () => {
 
@@ -39,6 +19,7 @@ const Test = () => {
         <Navbar />
         <div style={{ margin: '8px' }}></div>
         <SearchBox />
+        <PdfViewer />
       </div>
     );
   };

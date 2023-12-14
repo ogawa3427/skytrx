@@ -36,6 +36,7 @@ const Home = () => {
     return (
       <div>
         <Navbar />
+        <a href="/papers">Papers</a>
         <h4>{getGreetingBasedOnTime()}、清水さん</h4>
         <FlexContainer>
           <ThirdwebProvider>
