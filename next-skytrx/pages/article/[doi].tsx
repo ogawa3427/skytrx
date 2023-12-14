@@ -15,6 +15,9 @@ const A = () => {
   // DOIに基づいて論文を選択
   let article = baselist.filter(paper => paper.doi === doi);
 
+  const refs = article[0].reference;
+  
+
   return (
     <div>
       <Navbar />

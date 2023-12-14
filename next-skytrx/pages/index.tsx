@@ -1,55 +1,17 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import ResponsiveAppBar from '../components/ResponsiveAppBar';
-import BasicTabs from '../components/Tab';
-import BasicTabsB from '../components/TabB';
-import styled from 'styled-components';
 import Navbar from '../components/Nbar';
-
-import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { ThirdwebNftMedia, useContract, useNFT } from "@thirdweb-dev/react";
-
-function getGreetingBasedOnTime() {
-  const hours = new Date().getHours();
-  
-  if (hours < 12) {
-    return 'おはようございます';
-  } else if (hours >= 12 && hours < 18) {
-    return 'こんにちは';
-  } else {
-    return 'こんばんは';
-  }
-}
-
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 -8px;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-  }
-`;
+import BibUnit from '../components/BibUnit';
+import SearchBox from '../components/SearchBox';
+import papers from '../public/data/papers.json';
 
 const Home = () => {
-    return (
-      <div>
-        <Navbar />
-        <a href="/papers">Papers</a>
-        <h4>{getGreetingBasedOnTime()}、清水さん</h4>
-        <FlexContainer>
-          <ThirdwebProvider>
-            <div style={{ flex: '1 1 0', padding: '0 32px', width: '50%' }}>
-              <BasicTabs />
-            </div>
-            <div style={{ flex: '1 1 0', padding: '0 32px', width: '50%' }}>
-              <BasicTabsB />
-            </div>
-          </ThirdwebProvider>
-        </FlexContainer>
-      </div>
-    );
-  };
-  
-  export default Home;
+  return (
+    <div>
+      <Navbar />
+      <div style={{ margin: '8px' }}></div>
+      <SearchBox />
+      <BibUnit articles={papers} />
+    </div>
+  );
+}
+export default Home;
