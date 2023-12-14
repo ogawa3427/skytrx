@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Navbar from '../../components/Nbar';
 import BibUnit from '../../components/BibUnit';
+import CommentList from '../../components/CommentList';
 
 import React from 'react';
 import papers from '../../public/data/papers.json';
@@ -17,12 +18,19 @@ const A = () => {
   return (
     <div>
       <Navbar />
-      <h1>A: {doi}</h1>
-      {doi}
       <BibUnit articles={article} />
-      <img src="/pdfs/pdf.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <div style={{ flex: 4, paddingRight: '10px' }}>
+          <img src="/pdfs/pdf.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        </div>
+        <div style={{ flex: 2 }}>
+          <CommentList toSearchProp={doi} />
+        </div>
+  
+      </div>
     </div>
   );
-};
+}
+  
 
 export default A;

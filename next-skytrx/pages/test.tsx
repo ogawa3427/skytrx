@@ -11,6 +11,7 @@ import SearchBox from '../components/SearchBox';
 
 import PdfViewer from '../components/PdfViewer';
 
+import CommentList from '../components/CommentList';
 
 const Test = () => {
 
@@ -19,6 +20,7 @@ const Test = () => {
         <Navbar />
         <div style={{ margin: '8px' }}></div>
         <SearchBox />
+        <CommentList toSearchProp="2" />
         <PdfViewer />
       </div>
     );

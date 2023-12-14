@@ -15,6 +15,7 @@ export default function BibUnit({ articles }) {
               {article.title}
             </Typography>
           </a>
+          <br />
           <Typography variant="h6" component="span" style={{ marginLeft: '8px' }}>
             {article.personalid.map(id => users[id] ? users[id].name : "名前なし").join(", ")}
           </Typography>

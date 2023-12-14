@@ -29,7 +29,8 @@
         "ethics": "1.5",
         "view": "100",
         "comment": "0",
-        "edit": "0"
+        "edit": "0",
+        "reference": ["1", "5", "15"]
     },
     {
         "doi": "3",
