@@ -7,6 +7,12 @@ import EditIcon from '@mui/icons-material/Edit';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
 export default function BibUnit({ articles, status }) {
+  if (status == 'reviewedWaiting') {
+    articles = articles.filter(article => article.status !== 'enough');
+  } else {
+    articles = articles.filter(article => article.status === 'enough');
+  }
+
   return (
     <div>
       {articles.map((article, index) => (

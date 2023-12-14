@@ -47,7 +47,7 @@ const Article = () => {
       <BibUnit articles={article} status={'enough'} />
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <div style={{ flex: 4, paddingRight: '10px' }}>
-          <img src="/pdfs/pdf.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <img src={`/pdfs/${doi}.png`} alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         </div>
         <div style={{ flex: 2 }}>
           <CommentList toSearchProp={doi} />

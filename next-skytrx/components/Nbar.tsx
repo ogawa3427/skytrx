@@ -15,6 +15,7 @@ export default function Navbar({ isLoggedIn }) {
   };
   const handleLogout = () => {
     Cookies.set('loggedin', 'false');
+    Cookies.set('enoughor', 'enough');
     window.location.reload();
   };
 
