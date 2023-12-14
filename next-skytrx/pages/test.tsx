@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import ResponsiveAppBar from '../components/ResponsiveAppBar';
+import Navbar from '../components/Nbar';
 import BasicTabs from '../components/Tab';
 import BasicTabsB from '../components/TabB';
 import styled from 'styled-components';
@@ -36,7 +36,8 @@ const Test = () => {
 
     return (
       <div>
-        <ResponsiveAppBar />
+        <Navbar />
+        <div style={{ margin: '8px' }}></div>
         <SearchBox />
         <BibUnit />
       </div>
