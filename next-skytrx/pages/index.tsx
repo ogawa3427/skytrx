@@ -9,7 +9,7 @@ import Cookies from 'js-cookie';
 import { Grid } from '@mui/material';
 
 
-export const AuthContext = React.createContext();
+export const AuthContext = React.createContext({ isLoggedIn: false, setIsLoggedIn: () => {} });
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
