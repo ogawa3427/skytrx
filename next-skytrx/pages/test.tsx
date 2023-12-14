@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import Navbar from '../components/Nbar';
+import Footer from '../components/Footer';
 
 import SearchBox from '../components/SearchBox';
 import PdfViewer from '../components/PdfViewer';
@@ -30,6 +31,7 @@ const Test = () => {
       <StartReview />
       <CommentList toSearchProp="2" />
       <PdfViewer />
+      <Footer />
     </div>
   );
 };

@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Nbar";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
+import { Typography } from "@mui/material";
+import Footer from "../components/Footer";
 
 const MyPage = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
@@ -24,7 +26,15 @@ const MyPage = () => {
     return (
       <div>
         <Navbar isLoggedIn={true} />
-        <h1>MyPage</h1>
+        <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>Post a Paper</Typography>
+        <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>Your Papers</Typography>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Enough Reviewed</Typography>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Waiting for Review</Typography>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Need to Revise</Typography>
+        <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>Others' Papers</Typography>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Submitted Review</Typography>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Unsubmitted Review</Typography>
+        <Footer />
       </div>
     );
 };

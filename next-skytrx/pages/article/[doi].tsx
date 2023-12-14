@@ -3,6 +3,7 @@ import Navbar from '../../components/Nbar';
 import BibUnit from '../../components/BibUnit';
 import CommentList from '../../components/CommentList';
 import Typography from '@mui/material/Typography';
+import Footer from '../../components/Footer';
 
 import React, { useEffect, useState } from 'react';
 import papers from '../../public/data/papers.json';
@@ -54,7 +55,8 @@ const Article = () => {
         </div> 
       </div>
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>References</Typography>
-      <BibUnit articles={references} status={'enough'}/>      
+      <BibUnit articles={references} status={'enough'}/>   
+      <Footer />   
     </div>
   );
 }

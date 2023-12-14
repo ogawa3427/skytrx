@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Nbar';
+import Footer from '../components/Footer';
 import BibUnit from '../components/BibUnit';
 import SearchBox from '../components/SearchBox';
 import TwoToggle from '../components/TwoToggle';
@@ -35,6 +36,7 @@ const Home = () => {
         {isLoggedIn ? <TwoToggle /> : <OneToggle />}
       </Grid>
       <BibUnit articles={papers} status={lstatus} />
+      <Footer />
     </div>
   );
 }
