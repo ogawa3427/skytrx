@@ -2,7 +2,7 @@ import React from 'react';
 import { TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchInput = () => {
+export default function RoundedSearchBar() {
   return (
     <TextField
       variant="outlined"
@@ -10,29 +10,32 @@ const SearchInput = () => {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <SearchIcon />
+            <SearchIcon sx={{ color: 'black', backgroundColor: '#f0f0f0', borderRadius: '50%' }} />
           </InputAdornment>
         ),
+        style: {
+          paddingRight: 8, // アイコンとプレースホルダーの間に適切な余白を追加
+        }
       }}
       sx={{
-        borderRadius: '30px', // 角の丸みを調整
         '& .MuiOutlinedInput-root': {
+          borderRadius: '50px', // テキストフィールド全体の角を丸くする
+          backgroundColor: '#f0f0f0', // テキストフィールドの背景色
           '& fieldset': {
-            borderColor: 'rgba(0, 0, 0, 0.23)', // 枠線の色
+            borderColor: 'transparent', // 枠線を透明にする
           },
           '&:hover fieldset': {
             borderColor: 'rgba(0, 0, 0, 0.23)', // ホバー時の枠線の色
           },
           '&.Mui-focused fieldset': {
             borderColor: 'rgba(0, 0, 0, 0.23)', // フォーカス時の枠線の色
-          }
+          },
         },
-        '& .MuiInputAdornment-root .MuiSvgIcon-root': {
-          color: 'rgba(0, 0, 0, 0.54)', // アイコンの色
-        }
+        '& .MuiInputBase-input': {
+          color: 'black', // テキストの色を黒に
+        },
+        width: 'fit-content', // テキストフィールドの幅を内容に合わせて調整
       }}
     />
   );
-};
-
-export default SearchInput;
+}
