@@ -4,6 +4,7 @@ import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import BasicTabs from '../components/Tab';
 import BasicTabsB from '../components/TabB';
 import styled from 'styled-components';
+import Navbar from '../components/Nbar';
 
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import { ThirdwebNftMedia, useContract, useNFT } from "@thirdweb-dev/react";
@@ -34,7 +35,7 @@ const FlexContainer = styled.div`
 const Home = () => {
     return (
       <div>
-        <ResponsiveAppBar />
+        <Navbar />
         <h4>{getGreetingBasedOnTime()}、清水さん</h4>
         <FlexContainer>
           <ThirdwebProvider>
