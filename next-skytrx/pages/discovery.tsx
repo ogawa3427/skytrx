@@ -1,10 +1,10 @@
 import React from "react";
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
-
+import Navbar from "../components/Nbar";
 const Discovery = () => {
   return (
     <div>
-      <ResponsiveAppBar />
+      <Navbar />
       <h1>Discovery</h1>
     </div>
   );
