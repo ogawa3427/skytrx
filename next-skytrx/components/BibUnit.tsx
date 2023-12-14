@@ -16,7 +16,7 @@ export default function BibUnit({ articles }) {
             </Typography>
           </a>
           <br />
-          <Typography variant="h6" component="span" style={{ marginLeft: '8px' }}>
+          <Typography variant="subtitle1" component="span" style={{ display: 'block', marginTop: '8px' }}>
             {article.personalid.map(id => users[id] ? users[id].name : "名前なし").join(", ")}
           </Typography>
           <Typography variant="subtitle1">Published on: {article.year}/{article.month}/{article.day}</Typography>
