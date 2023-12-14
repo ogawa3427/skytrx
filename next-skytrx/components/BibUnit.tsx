@@ -5,6 +5,7 @@ import users from '../public/data/users.json';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import StartReview from './StartReview';
 
 export default function BibUnit({ articles, status }) {
   if (status == 'reviewedWaiting') {
@@ -68,24 +69,28 @@ export default function BibUnit({ articles, status }) {
             </Grid>
 
             {/* 右側のコンテナ */}
-            <Grid item xs={12} sm={6} container direction="column" spacing={1}>
-              <Grid item container alignItems="center" spacing={1}>
-                <Typography variant="body2">Novelty</Typography>
-                <Rating name="novelty" value={parseFloat(article.novelty)} readOnly />
+            {!(status == 'reviewedWaiting') ? (
+              <Grid item xs={12} sm={6} container direction="column" spacing={1}>
+                <Grid item container alignItems="center" spacing={1}>
+                  <Typography variant="body2">Novelty</Typography>
+                  <Rating name="novelty" value={parseFloat(article.novelty)} readOnly />
+                </Grid>
+                <Grid item container alignItems="center" spacing={1}>
+                  <Typography variant="body2">Originality</Typography>
+                  <Rating name="originality" value={parseFloat(article.originality)} readOnly />
+                </Grid>
+                <Grid item container alignItems="center" spacing={1}>
+                  <Typography variant="body2">Validity</Typography>
+                  <Rating name="validity" value={parseFloat(article.validity)} readOnly />
+                </Grid>
+                <Grid item container alignItems="center" spacing={1}>
+                  <Typography variant="body2">Ethics</Typography>
+                  <Rating name="ethics" value={parseFloat(article.ethics)} readOnly />
+                </Grid>
               </Grid>
-              <Grid item container alignItems="center" spacing={1}>
-                <Typography variant="body2">Originality</Typography>
-                <Rating name="originality" value={parseFloat(article.originality)} readOnly />
-              </Grid>
-              <Grid item container alignItems="center" spacing={1}>
-                <Typography variant="body2">Validity</Typography>
-                <Rating name="validity" value={parseFloat(article.validity)} readOnly />
-              </Grid>
-              <Grid item container alignItems="center" spacing={1}>
-                <Typography variant="body2">Ethics</Typography>
-                <Rating name="ethics" value={parseFloat(article.ethics)} readOnly />
-              </Grid>
-            </Grid>
+            ) : (
+              <StartReview />
+            )}
           </Grid>
         </Paper>
       ))}

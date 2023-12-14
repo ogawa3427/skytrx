@@ -5,6 +5,7 @@ import Navbar from '../components/Nbar';
 import SearchBox from '../components/SearchBox';
 import PdfViewer from '../components/PdfViewer';
 import CommentList from '../components/CommentList';
+import StartReview from '../components/StartReview';
 
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
@@ -26,6 +27,7 @@ const Test = () => {
       <Navbar isLoggedIn={isLoggedIn} />
       <div style={{ margin: '8px' }}></div>
       <SearchBox />
+      <StartReview />
       <CommentList toSearchProp="2" />
       <PdfViewer />
     </div>
