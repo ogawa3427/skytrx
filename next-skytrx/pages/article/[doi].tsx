@@ -20,6 +20,7 @@ const A = () => {
       <h1>A: {doi}</h1>
       {doi}
       <BibUnit articles={article} />
+      <img src="/pdfs/pdf.jpg" alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
     </div>
   );
 };
