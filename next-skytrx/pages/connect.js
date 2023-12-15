@@ -958,7 +958,7 @@ const Connect = () => {
   useEffect(() => {
     // MetaMaskのプロバイダを初期化
     const web3 = new Web3(window.ethereum);
-    const contractAddress = '0xB55C6Cc5095C6316701C645338f0cb97B1F63069';
+    const contractAddress = '0x0942B87CF37d22DA08fC9142dCB47A78d26Dc866';
     const myContract = new web3.eth.Contract(contractABI, contractAddress);
     setContract(myContract);
   }, []);
@@ -984,6 +984,7 @@ const Connect = () => {
       <h2>Connect</h2>
       <input type="text" value={authorAddress} onChange={(e) => setAuthorAddress(e.target.value)} placeholder="Author Address" />
       <button onClick={handleMint}>Mint Paper</button>
+      <a href="https://sepolia.etherscan.io/token/0x0942b87cf37d22da08fc9142dcb47a78d26dc866">View on Etherscan</a>
     </div>
   );
 };
