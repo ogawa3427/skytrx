@@ -267,7 +267,7 @@
         "comment": "27",
         "edit": "4",
         "reference": ["2", "6", "11"],
-        "status": "enough"
+        "status": "waitingreview"
     },
     {
         "doi": "16",
@@ -303,7 +303,7 @@
         "comment": "1",
         "edit": "1",
         "reference": ["1", "5", "15"],
-        "status": "?"
+        "status": "enough"
     },
     {
         "doi": "18",
@@ -321,7 +321,7 @@
         "comment": "1",
         "edit": "1",
         "reference": ["8", "15"],
-        "status": "?"
+        "status": "waitingreview"
     },
     {
         "doi": "19",
@@ -339,6 +339,6 @@
         "comment": "1",
         "edit": "1",
         "reference": ["4", "8", "14"],
-        "status": "?"
+        "status": "needrevise"
     }
 ]
