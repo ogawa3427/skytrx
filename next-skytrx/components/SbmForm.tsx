@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Button, TextField, Grid, Paper, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
+import Cookies from 'js-cookie';
 
 export default function PaperSubmissionForm() {
   const [paperData, setPaperData] = useState({
     title: '',
     authors: '',
-    summary: '',
+    abstract: '',
     keywords: '',
     references: ''
   });
@@ -27,6 +28,8 @@ export default function PaperSubmissionForm() {
     e.preventDefault();
     // Process the form data and the file here
     console.log(paperData, file);
+    Cookies.set('paperData', paperData);
+    console.log(Cookies.get('paperData'));
   };
 
   return (
@@ -50,7 +53,7 @@ export default function PaperSubmissionForm() {
               name="abstract"
               multiline
               rows={4}
-              value={paperData.summary}
+              value={paperData.abstract}
               onChange={handleChange}
             />
           </Grid>
