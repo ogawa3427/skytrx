@@ -1,0 +1,3 @@
+const nextConfig = {
+    productionBrowserSourceMaps: true
+};
