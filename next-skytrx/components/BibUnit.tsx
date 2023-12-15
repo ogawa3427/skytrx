@@ -15,7 +15,14 @@ export default function BibUnit({ articles, status }) {
     return newDate;
   };
 
-  if (status == 'reviewedWaiting') {
+  // 期限までの日数を計算する関数
+  const calculateDaysRemaining = (dueDate: Date) => {
+    const currentDate = new Date();
+    const timeDiff = dueDate.getTime() - currentDate.getTime();
+    return Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+  };
+
+  if (status === 'reviewedWaiting') {
     articles = articles.filter(article => article.status !== 'enough');
   } else {
     articles = articles.filter(article => article.status === 'enough');
@@ -26,6 +33,8 @@ export default function BibUnit({ articles, status }) {
       {articles.map((article, index) => {
         // 日付を作成し、4ヶ月を加算
         const dueDate = addMonths(new Date(article.year, article.month - 1, article.day), 4);
+        // 期限までの日数を計算
+        const daysRemaining = calculateDaysRemaining(dueDate);
 
         return (
           <Paper key={index} elevation={3} sx={{ margin: '16px', padding: '16px' }}>
@@ -73,7 +82,10 @@ export default function BibUnit({ articles, status }) {
                         </Grid>
                       </>
                     ) : (
-                      <h3>Review Limit {dueDate.getFullYear()}/{dueDate.getMonth() + 1}/{dueDate.getDate()}</h3>
+                      <>
+                        <h3>Review Limit duedate {dueDate.getFullYear()}/{dueDate.getMonth() + 1}/{dueDate.getDate()}</h3>
+                        <p>[{daysRemaining} days remain]</p>
+                      </>
                     )}
                   
                 </Grid>
