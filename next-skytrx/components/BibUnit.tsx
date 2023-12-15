@@ -53,7 +53,7 @@ export default function BibUnit({ articles, status }) {
     <>
       <Impact article={article} />
       <LimitDate article={article} />
-      <StartReview article={article} />
+      <StartReview doi={article.doi} />
     </>
   );
   
@@ -63,16 +63,15 @@ export default function BibUnit({ articles, status }) {
         <Paper key={index} elevation={3} sx={{ margin: '16px', padding: '16px' }}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12} container direction="row" alignItems="stretch">
-              <Grid item style={{ maxHeight: '500px' }}>
-                <img src={`/images/${article.img}.png`} alt="image" style={{ width: 'auto', height: '100%', objectFit: 'contain' }} />
+              <Grid item style={{ maxHeight: '100%' }}>
+                <img src={`/images/${article.img}.png`} alt="image" style={{ width: 'auto', maxHeight: '100%', objectFit: 'contain' }} />
               </Grid>
-              <Grid item>
+              <Grid item xs>
                 <TiAuPuEd article={article} />
                 {status === 'enough' ? renderEnoughStatus(article) :
                 status !== 'submittedReview' ? renderNotSubmittedReviewStatus(article) :
                 renderSubmittedReviewStatus(article)}
               </Grid>
-            
             </Grid>
           </Grid>
         </Paper>
