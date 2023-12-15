@@ -8,9 +8,12 @@ import Box from "@mui/material/Box";
 const TiAuPuEd = ({article}) => {
     return (
         <div>
-        <Typography variant="h6" component="h2" gutterBottom>
-            {article.title}
-        </Typography>
+        <a href={`/article/${article.doi}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography variant="h6" component="span">
+                {article.title}
+            </Typography>
+        </a>
+
         <Typography variant="subtitle1" component="span" style={{ display: 'block', marginTop: '8px' }}>
             {Array.isArray(article.personalid) 
                 ? article.personalid.map(id => users[id] ? users[id].name : "名前なし").join(", ")
@@ -22,7 +25,8 @@ const TiAuPuEd = ({article}) => {
                 Published {article.year}/{article.month}/{article.day} (JST)
             </Typography>
             <Typography variant="body1" gutterBottom>
-                {article.lastedit != null ? `Last Edited ${article.lastedit.split('-').join('/')} (JST)` : console.log("lasteditはnullです")}            </Typography>
+                {article.lastedit != null ? `Last Edited ${article.lastedit.split('-').join('/')} (JST)` : "lasteditはnullです"}
+            </Typography>
         </Box>
         </div>
     );
