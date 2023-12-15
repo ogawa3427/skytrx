@@ -25,7 +25,7 @@ const TiAuPuEd = ({article}) => {
                 Published {article.year}/{article.month}/{article.day} (JST)
             </Typography>
             <Typography variant="body1" gutterBottom>
-                {article.lastedit != null ? `Last Edited ${article.lastedit.split('-').join('/')} (JST)` : "lasteditはnullです"}
+                {article.lastedit ? `Last Edited ${article.lastedit.split('-').join('/')} (JST)` : "lasteditはnullです"}
             </Typography>
         </Box>
         </div>
