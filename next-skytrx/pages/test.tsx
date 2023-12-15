@@ -11,7 +11,7 @@ import StartReview from '../components/StartReview';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 
-import TiAuPuEd from '../components/TiAuPuEd';
+//import TiAuPuEd from '../components/TiAuPuEd';
 import Impact from '../components/Impact';
 import ThreeIcons from '../components/ThreeIcons';
 

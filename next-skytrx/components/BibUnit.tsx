@@ -4,7 +4,7 @@ import users from '../public/data/users.json';
 import Cookies from 'js-cookie';
 
 import StartReview from './StartReview';
-import TiAuPuEd from './TiAuPuEd';
+//import TiAuPuEd from './TiAuPuEd';
 import FourStars from './FourStars';
 import Impact from './Impact';
 import ThreeIcons from './ThreeIcons';
@@ -21,7 +21,7 @@ export default function BibUnit({ articles, status }) {
     <>
       {articles.map((article, index) => (
         <Paper key={index} elevation={3} sx={{ margin: '16px', padding: '16px' }}>
-          <TiAuPuEd article={article} />
+          
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} container direction="column" spacing={2}>
               <Grid item>
