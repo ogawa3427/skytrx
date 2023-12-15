@@ -1,24 +1,37 @@
 import React, { useState } from 'react';
 import { Button, TextField, Grid, Paper, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Cookies from 'js-cookie';
 
 export default function PaperSubmissionForm() {
   const [paperData, setPaperData] = useState({
     title: '',
     authors: '',
-    summary: '',
+    abstract: '',
     keywords: '',
-    content: '',
     references: ''
   });
+
+  // New state variable for the file
+  const [file, setFile] = useState(null);
 
   const handleChange = (e) => {
     setPaperData({ ...paperData, [e.target.name]: e.target.value });
   };
 
+  // New function to handle file changes
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // ここでフォームのデータを処理する
-    console.log(paperData);
+    // フォームデータとファイルをここで処理します
+    console.log(paperData, file);
+    Cookies.set('paperData', paperData);
+    console.log(Cookies.get('paperData'));
+    // 完了のアラートを表示します
+    alert('Successfully Published!');
   };
 
   return (
@@ -38,41 +51,18 @@ export default function PaperSubmissionForm() {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Authors"
-              name="authors"
-              value={paperData.authors}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Summary"
-              name="summary"
+              label="Abstract"
+              name="abstract"
               multiline
               rows={4}
-              value={paperData.summary}
+              value={paperData.abstract}
               onChange={handleChange}
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Keywords"
-              name="keywords"
-              value={paperData.keywords}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Content"
-              name="content"
-              multiline
-              rows={8}
-              value={paperData.content}
-              onChange={handleChange}
+            <input
+              type="file"
+              onChange={handleFileChange}
             />
           </Grid>
           <Grid item xs={12}>
@@ -87,9 +77,17 @@ export default function PaperSubmissionForm() {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary">
-              Submit Paper
-            </Button>
+            <Box
+              sx={{
+                backgroundColor: '#f0f0f0', // バックグラウンドカラーを設定
+                borderRadius: '50%', // ボーダーラジウスを50%に設定
+                padding: '0px 20px', // 上下のパディングを10px、左右のパディングを20pxに設定
+              }}
+            >
+              <Button type="submit" variant="contained" style={{ backgroundColor: 'red' }}>
+                Submit Paper
+              </Button>
+            </Box>
           </Grid>
         </Grid>
       </form>
