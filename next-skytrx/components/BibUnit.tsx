@@ -84,7 +84,7 @@ export default function BibUnit({ articles, status }) {
                     ) : (
                       <>
                         <h3>Review Limit duedate {dueDate.getFullYear()}/{dueDate.getMonth() + 1}/{dueDate.getDate()}</h3>
-                        <p>[{daysRemaining} days remain]</p>
+                        <p>{daysRemaining} days remain</p>
                       </>
                     )}
                   
