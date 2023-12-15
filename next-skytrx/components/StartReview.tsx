@@ -21,8 +21,8 @@ export default function RoundedButton({ doi }) {
     return (
       <StyledButton variant="outlined" style={{ textDecoration: 'none', color: 'inherit' }}>
         <a href={`/review/${doi}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Typography variant="h5" component="span">
-            Starting Review {doi}
+          <Typography variant="h6" component="span">
+            Starting Review 
           </Typography>
         </a>
       </StyledButton>
