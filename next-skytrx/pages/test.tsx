@@ -14,6 +14,7 @@ import Cookies from 'js-cookie';
 //import TiAuPuEd from '../components/TiAuPuEd';
 import Impact from '../components/Impact';
 import ThreeIcons from '../components/ThreeIcons';
+import Connect from '../components/Connect';
 
 const Test = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
@@ -49,7 +50,7 @@ const Test = () => {
   return (
     <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
       <ThreeIcons article={articles[0]} />
-
+      <Connect />
     </div>
   );
 };

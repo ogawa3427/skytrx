@@ -984,7 +984,10 @@ const Connect = () => {
       <h2>Connect</h2>
       <input type="text" value={authorAddress} onChange={(e) => setAuthorAddress(e.target.value)} placeholder="Author Address" />
       <button onClick={handleMint}>Mint Paper</button>
+      <br />
       <a href="https://sepolia.etherscan.io/token/0x0942b87cf37d22da08fc9142dcb47a78d26dc866">View on Etherscan</a>
+      <br />
+      <p>0x0942b87cf37d22da08fc9142dcb47a78d26dc866<br></br>をMetaMaskの"NFTをインポート"で入力、トークンIDはscanからよしなに</p>
     </div>
   );
 };
