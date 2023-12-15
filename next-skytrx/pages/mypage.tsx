@@ -54,7 +54,7 @@ const MyPage = () => {
 
 
     return (
-      <div>
+      <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
         <Navbar isLoggedIn={true} />
         <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>Post Papers</Typography>
         <SbmForm />

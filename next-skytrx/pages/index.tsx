@@ -48,7 +48,7 @@ const Home = () => {
     }
 
   return (
-    <div>
+    <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
       <Navbar isLoggedIn={isLoggedIn} />
       <div style={{ margin: '8px' }}></div>
       <DynamicGrid container>

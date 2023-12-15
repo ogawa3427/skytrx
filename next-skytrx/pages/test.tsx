@@ -47,7 +47,7 @@ const Test = () => {
     "status": "enough"
   }];
   return (
-    <div>
+    <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
       <ThreeIcons article={articles[0]} />
 
     </div>

@@ -15,7 +15,7 @@ const Profile = () => {
     }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
 
     return (
-      <div>
+      <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
         <Navbar isLoggedIn={isLoggedIn} />
         <h1>Profile</h1>
       </div>
