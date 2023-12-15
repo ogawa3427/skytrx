@@ -26,10 +26,12 @@ export default function PaperSubmissionForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process the form data and the file here
+    // フォームデータとファイルをここで処理します
     console.log(paperData, file);
     Cookies.set('paperData', paperData);
     console.log(Cookies.get('paperData'));
+    // 完了のアラートを表示します
+    alert('Successfully Published!');
   };
 
   return (
