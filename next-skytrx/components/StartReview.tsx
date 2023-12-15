@@ -6,14 +6,14 @@ import { styled } from '@mui/material/styles';
 
 const StyledButton = styled(Button)({
   borderRadius: '20px',
-  backgroundColor: '#f0f0f0',
+  backgroundColor: '#909090',
   color: 'black',
   '&:hover': {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#b0b0b0',
     borderColor: 'rgba(0, 0, 0, 0.23)',
   },
-  padding: '10px 20px',
-  margin: '10px',
+  padding: '1px 10px',
+  margin: '2px',
   // その他のスタイルはここに追加
 });
 

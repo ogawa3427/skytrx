@@ -33,7 +33,7 @@ const Home = () => {
         if (!lstatus || lstatus == 'reviewedWaiting') {
             setLstatus('reviewedWaiting');
         } else {
-            setLstatus('reviewedEnough');
+            setLstatus('enough');
         }
 
     }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
