@@ -14,7 +14,14 @@ export default function PaperSubmissionForm() {
     lastedit: '2023-12-16',
     abstract: '',
     reference: '1,2,3',
-    status: 'waitingreview'
+    status: 'waitingreview',
+    ethics: '1.5',
+    validity: '3.1',
+    originality: '1.4',
+    novelty: '1.3',
+    comment: '0',
+    edit: '0',
+    view: '12'
   });
 
   // New state variable for the file
