@@ -1,6 +1,6 @@
 import React from "react";
 
-import users from "/public/data/users.json";
+import users from '../public/data/users.json';
 
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
