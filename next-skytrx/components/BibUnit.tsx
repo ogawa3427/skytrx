@@ -1,13 +1,18 @@
 import React from 'react';
 import { Paper, Typography, Grid, Rating } from '@mui/material';
 import users from '../public/data/users.json';
+import Cookies from 'js-cookie';
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import StartReview from './StartReview';
 
+import TiAuPuEd from './TiAuPuEd';
+
 export default function BibUnit({ articles, status }) {
+
+
   // 日付に月を加算する関数
   const addMonths = (date, months) => {
     const newDate = new Date(date);
@@ -39,16 +44,7 @@ export default function BibUnit({ articles, status }) {
 
         return (
           <Paper key={index} elevation={3} sx={{ margin: '16px', padding: '16px' }}>
-            <a href={`/article/${article.doi}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant="h5" component="span">
-                {article.title}
-              </Typography>
-            </a>
-            <br />
-            <Typography variant="subtitle1" component="span" style={{ display: 'block', marginTop: '8px' }}>
-              {article.personalid.map(id => users[id] ? users[id].name : "名前なし").join(", ")}
-            </Typography>
-            <Typography variant="subtitle1">Published on: {article.year}/{article.month}/{article.day}</Typography>
+            <TiAuPuEd article={article} />
             <Grid container spacing={2}>
               {/* 左側のコンテナ */}
               <Grid item xs={12} sm={6} container direction="column" spacing={2}>

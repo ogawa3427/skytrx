@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, TextField, Grid, Paper, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Cookies from 'js-cookie';
 
 export default function PaperSubmissionForm() {
   const [paperData, setPaperData] = useState({
+    doi: '20',
     title: '',
-    authors: '',
+    personalid: '25',
+    year: '2023',
+    month: '12',
+    day: '16',
+    lastedit: '2023-12-16',
     abstract: '',
-    keywords: '',
-    references: ''
+    reference: '1,2,3',
+    status: 'waitingreview'
   });
 
   // New state variable for the file
@@ -28,11 +33,16 @@ export default function PaperSubmissionForm() {
     e.preventDefault();
     // フォームデータとファイルをここで処理します
     console.log(paperData, file);
-    Cookies.set('paperData', paperData);
+    Cookies.set('paperData', JSON.stringify(paperData));
     console.log(Cookies.get('paperData'));
     // 完了のアラートを表示します
     alert('Successfully Published!');
   };
+
+  // useEffect to save paperData to Cookie whenever it changes
+  useEffect(() => {
+    Cookies.set('paperData', JSON.stringify(paperData));
+  }, [paperData]);
 
   return (
     <Paper style={{ padding: '20px', margin: '20px' }}>
@@ -72,7 +82,7 @@ export default function PaperSubmissionForm() {
               name="references"
               multiline
               rows={4}
-              value={paperData.references}
+              value={paperData.reference}
               onChange={handleChange}
             />
           </Grid>

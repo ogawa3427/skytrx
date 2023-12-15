@@ -11,6 +11,8 @@ import StartReview from '../components/StartReview';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 
+import TiAuPuEd from '../components/TiAuPuEd';
+
 const Test = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
 
@@ -23,14 +25,28 @@ const Test = () => {
     }
   }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
 
+  const articles = [{
+    "doi": "20",
+    "title": "CP-Violation in the Renormalizable Theory of Weak Interaction",
+    "personalid": "25",
+    "year": "2023",
+    "month": "7",
+    "day": "1",
+    "lastedit": "2023-7-3",
+    "impact": "1.2",
+    "novelty": "1.3",
+    "originality": "1.4",
+    "validity": "3.1",
+    "ethics": "1.5",
+    "view": "100",
+    "comment": "0",
+    "edit": "0",
+    "reference": ["1", "5", "15"],
+    "status": "enough"
+  }];
   return (
     <div>
-      <Navbar isLoggedIn={isLoggedIn} />
-      <div style={{ margin: '8px' }}></div>
-      <SearchBox />
-      <CommentList toSearchProp="2" />
-      <PdfViewer />
-      <Footer />
+      <TiAuPuEd article={articles[0]} />
     </div>
   );
 };

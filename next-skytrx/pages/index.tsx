@@ -25,6 +25,14 @@ const Home = () => {
         } else {
             setLstatus('reviewedEnough');
         }
+
+        const row_paperData = Cookies.get('paperData');
+        let paperData = row_paperData ? JSON.parse(row_paperData) : [];
+        console.log(paperData.reference);
+        const ref = paperData.reference.split(',');
+        paperData.reference = ref;
+        console.log(paperData.reference);
+
     }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
 
   return (
