@@ -16,7 +16,8 @@
         "comment": "20",
         "edit": "1",
         "reference": ["2", "3"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga1"
     },
     {
         "doi": "2",
@@ -35,7 +36,8 @@
         "comment": "0",
         "edit": "0",
         "reference": ["1", "5", "15"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga2"
     },
     {
         "doi": "3",
@@ -54,7 +56,8 @@
         "comment": "30",
         "edit": "3",
         "reference": ["1", "2", "4", "21"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga3"
     },
     {
         "doi": "4",
@@ -73,7 +76,8 @@
         "comment": "25",
         "edit": "1",
         "reference": ["2", "3", "5"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga2"
     },
     {
         "doi": "5",
@@ -92,7 +96,8 @@
         "comment": "40",
         "edit": "4",
         "reference": ["1", "2", "3", "11", "21", "17"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga3"
     },
     {
         "doi": "6",
@@ -111,7 +116,8 @@
         "comment": "35",
         "edit": "3",
         "reference": ["2", "4", "5"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga1"
     },
     {
         "doi": "7",
@@ -130,7 +136,8 @@
         "comment": "20",
         "edit": "2",
         "reference": ["1", "3", "5"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga2"
     },
     {
         "doi": "8",
@@ -149,7 +156,8 @@
         "comment": "22",
         "edit": "2",
         "reference": ["2", "4", "6"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga1"
     },
     {
         "doi": "9",
@@ -168,7 +176,8 @@
         "comment": "18",
         "edit": "1",
         "reference": ["1", "3", "6"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga3"
     },
     {
         "doi": "10",
@@ -187,7 +196,8 @@
         "comment": "24",
         "edit": "2",
         "reference": ["2", "4", "7"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga2"
     },
     {
         "doi": "11",
@@ -206,7 +216,8 @@
         "comment": "19",
         "edit": "3",
         "reference": ["1", "3", "7"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga1"
     },
     {
         "doi": "12",
@@ -225,7 +236,8 @@
         "comment": "21",
         "edit": "1",
         "reference": ["2", "5", "8"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga3"
     },
     {
         "doi": "13",
@@ -244,7 +256,8 @@
         "comment": "16",
         "edit": "2",
         "reference": ["2", "5", "9"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga2"
     },
     {
         "doi": "14",
@@ -263,7 +276,8 @@
         "comment": "23",
         "edit": "3",
         "reference": ["2", "6", "10"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga1"
     },
     {
         "doi": "15",
@@ -282,7 +296,8 @@
         "comment": "27",
         "edit": "4",
         "reference": ["2", "6", "11"],
-        "status": "waitingreview"
+        "status": "waitingreview",
+        "img": "ga3"
     },
     {
         "doi": "16",
@@ -301,7 +316,8 @@
         "comment": "15",
         "edit": "2",
         "reference": ["2", "7", "12"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga2"
     },
     {
         "doi": "17",
@@ -320,7 +336,8 @@
         "comment": "1",
         "edit": "1",
         "reference": ["1", "5", "15"],
-        "status": "enough"
+        "status": "enough",
+        "img": "ga1"
     },
     {
         "doi": "18",
@@ -339,7 +356,8 @@
         "comment": "1",
         "edit": "1",
         "reference": ["8", "15"],
-        "status": "waitingreview"
+        "status": "waitingreview",
+        "img": "ga2"
     },
     {
         "doi": "19",
@@ -358,6 +376,7 @@
         "comment": "1",
         "edit": "1",
         "reference": ["4", "8", "14"],
-        "status": "needrevise"
+        "status": "needrevise",
+        "img": "ga3"
     }
 ]
