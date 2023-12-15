@@ -3,13 +3,14 @@ import Navbar from "../components/Nbar";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
-import Footer from "../components/Footer";
+
 import Grid from "@mui/material/Grid";
 
 import papers from "../public/data/papers.json";
 import comments from "../public/data/comments.json";
 import BibUnit from "../components/BibUnit";
 import SbmForm from "../components/SbmForm";
+import Footer from "../components/Footer";
 
 const MyPage = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
