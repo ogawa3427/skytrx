@@ -12,6 +12,8 @@ import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 
 import TiAuPuEd from '../components/TiAuPuEd';
+import Impact from '../components/Impact';
+import ThreeIcons from '../components/ThreeIcons';
 
 const Test = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
@@ -33,7 +35,7 @@ const Test = () => {
     "month": "7",
     "day": "1",
     "lastedit": "2023-7-3",
-    "impact": "1.2",
+    "impact": "1.6",
     "novelty": "1.3",
     "originality": "1.4",
     "validity": "3.1",
@@ -46,7 +48,8 @@ const Test = () => {
   }];
   return (
     <div>
-      <TiAuPuEd article={articles[0]} />
+      <ThreeIcons article={articles[0]} />
+
     </div>
   );
 };

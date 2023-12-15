@@ -9,6 +9,9 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import StartReview from './StartReview';
 
 import TiAuPuEd from './TiAuPuEd';
+import FourStars from './FourStars';
+import Impact from './Impact';
+import ThreeIcons from './ThreeIcons';
 
 export default function BibUnit({ articles, status }) {
 
@@ -61,32 +64,8 @@ export default function BibUnit({ articles, status }) {
                     )
                   ) : (
                     <>
-                      <Grid container alignItems="center" spacing={1}>
-                        <Typography variant="h6">Impact</Typography>
-                        <Rating name="impact-rating" value={parseFloat(article.impact)} readOnly />
-                      </Grid>
-                      <Grid container alignItems="center" spacing={1}>
-                        <Grid item>
-                          <VisibilityIcon />
-                        </Grid>
-                        <Grid item>
-                          <Typography variant="body2">{article.view}</Typography>
-                        </Grid>
-                      </Grid>
-                      <Grid container alignItems="center" spacing={1}>
-                        <Grid item>
-                          <EditIcon />
-                        </Grid>
-                        <Grid item>
-                          <Typography variant="body2">{article.edit}</Typography>
-                        </Grid>
-                        <Grid item>
-                          <ChatBubbleIcon />
-                        </Grid>
-                        <Grid item>
-                          <Typography variant="body2">{article.comment}</Typography>
-                        </Grid>
-                      </Grid>
+                      <Impact article={article} />
+                      <ThreeIcons article={article} />
                     </>
                   )}
                 </Grid>
@@ -96,22 +75,7 @@ export default function BibUnit({ articles, status }) {
               <Grid item xs={12} sm={6} container direction="column" spacing={1}>
                 {status !== 'reviewedWaiting' && (
                   <>
-                    <Grid item container alignItems="center" spacing={1}>
-                      <Typography variant="body2">Novelty</Typography>
-                      <Rating name="novelty" value={parseFloat(article.novelty)} readOnly />
-                    </Grid>
-                    <Grid item container alignItems="center" spacing={1}>
-                      <Typography variant="body2">Originality</Typography>
-                      <Rating name="originality" value={parseFloat(article.originality)} readOnly />
-                    </Grid>
-                    <Grid item container alignItems="center" spacing={1}>
-                      <Typography variant="body2">Validity</Typography>
-                      <Rating name="validity" value={parseFloat(article.validity)} readOnly />
-                    </Grid>
-                    <Grid item container alignItems="center" spacing={1}>
-                      <Typography variant="body2">Ethics</Typography>
-                      <Rating name="ethics" value={parseFloat(article.ethics)} readOnly />
-                    </Grid>
+                    <FourStars article={article} />
                   </>
                 )}
                 {status === 'reviewedWaiting' && !isDuePassed && (
