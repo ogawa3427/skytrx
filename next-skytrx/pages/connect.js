@@ -957,8 +957,7 @@ const Connect = () => {
 
   useEffect(() => {
     // Web3.jsの初期化とコントラクトの設定
-    api: process.env.API
-    const web3 = new Web3(api);
+    const web3 = new Web3(process.env.API);
     const contractAddress = '0xB55C6Cc5095C6316701C645338f0cb97B1F63069';
     const myContract = new web3.eth.Contract(contractABI, contractAddress);
     setContract(myContract);
