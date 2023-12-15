@@ -48,16 +48,17 @@ const Review = () => {
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <BibUnit articles={article} status={'enough'} />
+      <br />
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <div style={{ flex: 4, paddingRight: '10px' }}>
-        <img src={`/pdfs/${doi}.png`} alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <img src={`/pdfs/${doi}.png`} alt="description_of_image" style={{ width: '100%', height: '100%', objectFit: 'contain', boxShadow: '3px 3px 15px rgba(0,0,0,0.3)' }} />
         </div>
         <div style={{ flex: 2 }}>
           <CommentList toSearchProp={doi} />
         </div> 
       </div>
       <OverallReview doi={doi}/>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>References</Typography>
+      <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>References</Typography>
       <BibUnit articles={references} status={'enough'}/>   
       <Footer />   
     </div>
