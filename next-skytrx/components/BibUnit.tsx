@@ -25,8 +25,11 @@ export default function BibUnit({ articles, status }) {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} container direction="column" spacing={2}>
               <Grid item>
-                {status === 'reviewedWaiting' ? (
-                  <LimitDate article={article} />
+                {(status === 'enough') ? (
+                  <>
+                    <Impact article={article} />
+                    <ThreeIcons article={article} />
+                  </>
                 ) : (
                   <>
                     <Impact article={article} />
