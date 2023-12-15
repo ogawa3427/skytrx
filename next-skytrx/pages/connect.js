@@ -956,9 +956,8 @@ const Connect = () => {
 ]
 
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_API);
-    // Web3.jsの初期化とコントラクトの設定
-    const web3 = new Web3(process.env.NEXT_PUBLIC_API);
+    // MetaMaskのプロバイダを初期化
+    const web3 = new Web3(window.ethereum);
     const contractAddress = '0xB55C6Cc5095C6316701C645338f0cb97B1F63069';
     const myContract = new web3.eth.Contract(contractABI, contractAddress);
     setContract(myContract);
@@ -967,8 +966,12 @@ const Connect = () => {
   const handleMint = async () => {
     if (contract && authorAddress) {
       try {
+        // ユーザーのアカウントを取得
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+
         // トランザクションを送信
-        await contract.methods.mintPaper(authorAddress).send({ from: authorAddress });
+        await contract.methods.mintPaper(authorAddress).send({ from: account });
         console.log('Minting successful');
       } catch (error) {
         console.error('Error minting paper:', error);
