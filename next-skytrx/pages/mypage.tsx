@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Grid from "@mui/material/Grid";
 
 import papers from "../public/data/papers.json";
+import comments from "../public/data/comments.json";
 import BibUnit from "../components/BibUnit";
 import SbmForm from "../components/SbmForm";
 
@@ -42,6 +43,15 @@ const MyPage = () => {
         .filter(paper => paper.status === 'needrevise')
         .filter(paper => paper.personalid.includes('25'));
 
+
+    const basecomments = [...comments];
+    const you_commented_comments = basecomments
+        .filter(comment => comment.by.includes('25'));
+    
+    const you_commented_papers = baselist
+        .filter(paper => you_commented_comments.map(comment => comment.to).includes(paper.doi));
+
+
     return (
       <div>
         <Navbar isLoggedIn={true} />
@@ -59,6 +69,7 @@ const MyPage = () => {
         <BibUnit articles={your_need} status={'reviewedWaiting'} />
         <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>Others' Papers</Typography>
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Submitted Review</Typography>
+        <BibUnit articles={you_commented_papers} status={'enough'} />
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Unsubmitted Review</Typography>
         <Footer />
       </div>
