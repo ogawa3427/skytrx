@@ -28,7 +28,6 @@ const Test = () => {
       <Navbar isLoggedIn={isLoggedIn} />
       <div style={{ margin: '8px' }}></div>
       <SearchBox />
-      <StartReview />
       <CommentList toSearchProp="2" />
       <PdfViewer />
       <Footer />
