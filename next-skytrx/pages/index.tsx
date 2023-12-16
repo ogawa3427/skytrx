@@ -1,23 +1,12 @@
-import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Nbar';
-import Footer from '../components/Footer';
+import BibUnit from '../components/BibUnit';
 import SearchBox from '../components/SearchBox';
 import TwoToggle from '../components/TwoToggle';
 import OneToggle from '../components/OneToggle'; // OneToggleをインポート
 import papers from '../public/data/papers.json';
 import Cookies from 'js-cookie';
-
-// GridとBibUnitコンポーネントの動的インポート
-const DynamicGrid = dynamic(
-  () => import('@mui/material/Grid'),
-  { ssr: false }
-);
-
-const DynamicBibUnit = dynamic(
-  () => import('../components/BibUnit'),
-  { ssr: false }
-);
+import { Grid } from '@mui/material';
 
 const Home = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // useStateを使用して状態を管理
@@ -29,34 +18,28 @@ const Home = () => {
         } else {
             setIsLoggedIn(true);
         }
+        
         const lstatus = Cookies.get('enoughor');
         if (!lstatus || lstatus == 'reviewedWaiting') {
             setLstatus('reviewedWaiting');
         } else {
             setLstatus('enough');
+            Cookies.set('enoughor', 'enough');
+            let lstaus = Cookies.get('enoughor');
+            lstaus = 'enough';
         }
-
+        console.log(lstatus);
     }, []); // useEffectを使用してクライアントサイドでのみログイン状態を設定
 
-    let baselist = [...papers];
-    let newpaper = Cookies.get('paperData');
-    if (newpaper) {
-        newpaper = JSON.parse(newpaper);
-        let ref = newpaper.reference;
-        ref = ref.split(',');
-        baselist.push(newpaper);
-    }
-
   return (
-    <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
+    <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div style={{ margin: '8px' }}></div>
-      <DynamicGrid container>
+      <Grid container>
         <SearchBox />
         {isLoggedIn ? <TwoToggle /> : <OneToggle />}
-      </DynamicGrid>
-      <DynamicBibUnit articles={baselist} status={lstatus} />
-      <Footer />
+      </Grid>
+      <BibUnit articles={papers} status={lstatus} isLoggedIn={isLoggedIn} />
     </div>
   );
 }

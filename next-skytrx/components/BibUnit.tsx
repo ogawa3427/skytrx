@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Paper, Grid } from '@mui/material';
 import users from '../public/data/users.json';
 import Cookies from 'js-cookie';
-import { useEffect, useState } from 'react';
 
 import StartReview from './StartReview';
 import TiAuPuEd from './TiAuPuEd';
@@ -13,15 +12,22 @@ import WhLimit from './WhLimit';
 import LimitDate from './LimitDate';
 
 
-export default function BibUnit({ articles, status }) {
+export default function BibUnit({ articles, status, isLoggedIn }) {
   const [filteredArticles, setFilteredArticles] = useState([]);
 
   useEffect(() => {
-    const filtered = status === 'enough' 
-      ? articles.filter(article => article.status === 'enough')
-      : articles.filter(article => article.status !== 'enough');
+    let filtered;
+    if (isLoggedIn) {
+      // Filter based on status when logged in
+      filtered = status === 'enough' 
+        ? articles.filter(article => article.status === 'enough')
+        : articles.filter(article => article.status !== 'enough');
+    } else {
+      // Show only 'enough' articles when logged out
+      filtered = articles.filter(article => article.status === 'enough');
+    }
     setFilteredArticles(filtered);
-  }, [articles, status]);
+  }, [articles, status, isLoggedIn]);
 
   const renderEnoughStatus = (article) => (
     <>
