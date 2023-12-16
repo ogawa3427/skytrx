@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Web3 from 'web3';
+import { TextField } from '@mui/material';
 import { Contract } from 'web3-eth-contract';
 
-const Connect: React.FC = () => {
+type ConnectProps = {
+    buttonClicked: boolean;
+};
+
+const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
   const [contract, setContract] = useState<Contract<any> | null>(null);
   const [authorAddress, setAuthorAddress] = useState<string>('');
 
@@ -959,6 +964,10 @@ const Connect: React.FC = () => {
     ]
 
     useEffect(() => {
+        if (buttonClicked) {
+          handleMint();
+        }
+    
         const initializeWeb3 = async () => {
           const web3 = new Web3(window.ethereum);
           const contractAddress = '0x0942B87CF37d22DA08fC9142dCB47A78d26Dc866';
@@ -967,7 +976,7 @@ const Connect: React.FC = () => {
         };
     
         initializeWeb3();
-      }, []);
+      }, [buttonClicked]);
     
       const handleMint = async () => {
         if (contract && authorAddress) {
@@ -988,13 +997,16 @@ const Connect: React.FC = () => {
     
       return (
         <div>
-          <h2>Connect</h2>
-          <input type="text" value={authorAddress} onChange={(e) => setAuthorAddress(e.target.value)} placeholder="Author Address" />
-          <button onClick={handleMint}>Mint Paper</button>
-          <br />
-          <a href="https://sepolia.etherscan.io/token/0x0942b87cf37d22da08fc9142dcb47a78d26dc866">View on Etherscan</a>
-          <br />
-          <p>0x0942b87cf37d22da08fc9142dcb47a78d26dc866<br></br>をMetaMaskの"NFTをインポート"で入力、トークンIDはscanからよしなに</p>
+          <TextField
+            fullWidth
+            label="Your Address"
+            name="authorAddress"
+            multiline
+            rows={1}
+            value={authorAddress}
+            onChange={(e) => setAuthorAddress(e.target.value)}
+            />
+          <a href='https://sepolia.etherscan.io/token/0x0942b87cf37d22da08fc9142dcb47a78d26dc866'>Tokens' condition</a>
         </div>
       );
     };

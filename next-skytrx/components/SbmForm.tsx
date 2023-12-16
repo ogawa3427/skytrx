@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Button, TextField, Grid, Paper, Typography } from '@mui/material';
-import Box from '@mui/material/Box';
+import { Button, TextField, Grid, Paper, Typography, Box } from '@mui/material';
 import Cookies from 'js-cookie';
+import Connect from './Connect';
 
-export default function PaperSubmissionForm() {
+const SbmForm: React.FC = () => {
+  const [buttonClicked, setButtonClicked] = useState(false);
   const [paperData, setPaperData] = useState({
     doi: '20',
     title: '',
@@ -24,29 +25,24 @@ export default function PaperSubmissionForm() {
     view: '12'
   });
 
-  // New state variable for the file
   const [file, setFile] = useState(null);
 
   const handleChange = (e) => {
     setPaperData({ ...paperData, [e.target.name]: e.target.value });
   };
 
-  // New function to handle file changes
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // フォームデータとファイルをここで処理します
     console.log(paperData, file);
     Cookies.set('paperData', JSON.stringify(paperData));
-    console.log(Cookies.get('paperData'));
-    // 完了のアラートを表示します
     alert('Successfully Published!');
+    setButtonClicked(true); // ボタンがクリックされたときに状態を更新
   };
 
-  // useEffect to save paperData to Cookie whenever it changes
   useEffect(() => {
     Cookies.set('paperData', JSON.stringify(paperData));
   }, [paperData]);
@@ -64,6 +60,9 @@ export default function PaperSubmissionForm() {
               value={paperData.title}
               onChange={handleChange}
             />
+          </Grid>
+          <Grid item xs={12}>
+            <Connect  buttonClicked={buttonClicked} />
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -111,3 +110,5 @@ export default function PaperSubmissionForm() {
     </Paper>
   );
 }
+
+export default SbmForm;
