@@ -18,6 +18,7 @@ const Home = () => {
         } else {
             setIsLoggedIn(true);
         }
+        let isLoggedIn = Cookies.get('loggedin');
         
         const lstatus = Cookies.get('enoughor');
         if (!lstatus || lstatus == 'reviewedWaiting') {
