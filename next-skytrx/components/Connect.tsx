@@ -1008,7 +1008,7 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             value={authorAddress}
             onChange={(e) => setAuthorAddress(e.target.value)}
             />
-          <a href='https://sepolia.etherscan.io/token/0x0942b87cf37d22da08fc9142dcb47a78d26dc866'>Tokens' condition</a>
+          <a href='https://sepolia.etherscan.io/address/0x1ee3f06A8c8a65E25f4fff4733c2fD4E1DF5bDc6'>Tokens' condition</a>
         </div>
       );
     };
