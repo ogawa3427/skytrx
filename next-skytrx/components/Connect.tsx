@@ -16,6 +16,42 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
         {
             "inputs": [
                 {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "commenter",
+                    "type": "address"
+                }
+            ],
+            "name": "acceptComment",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "approve",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
                     "internalType": "address",
                     "name": "initialOwner",
                     "type": "address"
@@ -256,6 +292,32 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             "type": "event"
         },
         {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "evaluatePaper",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "author",
+                    "type": "address"
+                }
+            ],
+            "name": "mintPaper",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
             "anonymous": false,
             "inputs": [
                 {
@@ -332,6 +394,105 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             "type": "event"
         },
         {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "comment",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "rating",
+                    "type": "uint256"
+                }
+            ],
+            "name": "postComment",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "safeTransferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "safeTransferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "setApprovalForAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
             "anonymous": false,
             "inputs": [
                 {
@@ -359,17 +520,35 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
         {
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
                 },
                 {
                     "internalType": "address",
-                    "name": "commenter",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
                     "type": "address"
                 }
             ],
-            "name": "acceptComment",
+            "name": "transferOwnership",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -396,24 +575,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
                 }
             ],
             "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "approve",
-            "outputs": [],
-            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -455,19 +616,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             "type": "function"
         },
         {
-            "inputs": [],
-            "name": "commentReward",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
                     "internalType": "uint256",
@@ -486,6 +634,19 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
                     "internalType": "address",
                     "name": "",
                     "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "commentReward",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
                 }
             ],
             "stateMutability": "view",
@@ -513,19 +674,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
                 }
             ],
             "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "evaluatePaper",
-            "outputs": [],
-            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -630,19 +778,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             "type": "function"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "author",
-                    "type": "address"
-                }
-            ],
-            "name": "mintPaper",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [],
             "name": "name",
             "outputs": [
@@ -723,29 +858,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             "inputs": [
                 {
                     "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "comment",
-                    "type": "string"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "rating",
-                    "type": "uint256"
-                }
-            ],
-            "name": "postComment",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
                     "name": "",
                     "type": "uint256"
                 },
@@ -768,13 +880,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
         },
         {
             "inputs": [],
-            "name": "renounceOwnership",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [],
             "name": "reviewedReward",
             "outputs": [
                 {
@@ -784,75 +889,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
                 }
             ],
             "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "safeTransferFrom",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "bytes",
-                    "name": "data",
-                    "type": "bytes"
-                }
-            ],
-            "name": "safeTransferFrom",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "operator",
-                    "type": "address"
-                },
-                {
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
-                }
-            ],
-            "name": "setApprovalForAll",
-            "outputs": [],
-            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -924,42 +960,6 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             ],
             "stateMutability": "view",
             "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "transferFrom",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
-                }
-            ],
-            "name": "transferOwnership",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
         }
     ]
 
@@ -970,7 +970,7 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
     
         const initializeWeb3 = async () => {
           const web3 = new Web3(window.ethereum);
-          const contractAddress = '0x0942B87CF37d22DA08fC9142dCB47A78d26Dc866';
+          const contractAddress = '0x1ee3f06A8c8a65E25f4fff4733c2fD4E1DF5bDc6';
           const myContract = new web3.eth.Contract(contractABI as any, contractAddress);
           setContract(myContract);
         };
@@ -984,16 +984,18 @@ const Connect: React.FC<ConnectProps> = ({ buttonClicked }) => {
             // ユーザーのアカウントを取得
             const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
             const account = accounts[0];
-    
+      
             // トランザクションを送信
-            // 引数なしで関数を呼び出す
-            await contract.methods.mintPaper().send({ from: account });
+            // `mintPaper` 関数にユーザーのアドレスを引数として渡す
+            // @ts-ignore
+            await contract.methods.mintPaper(authorAddress).send({ from: account });
             console.log('Minting successful');
           } catch (error) {
             console.error('Error minting paper:', error);
           }
         }
       };
+      
     
       return (
         <div>
