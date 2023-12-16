@@ -63,14 +63,14 @@ const MyPage = () => {
 
         <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>Your Papers</Typography>
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Enough Reviewed</Typography>
-        <BibUnit articles={your_enough} status={'enough'} />
+        <BibUnit articles={your_enough} status={'enough'} isLoggedIn={isLoggedIn} />
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Waiting for Review</Typography>
-        <BibUnit articles={your_waiting} status={'reviewedWaiting'} />
+        <BibUnit articles={your_waiting} status={'reviewedWaiting'} isLoggedIn={isLoggedIn} />
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Need to Revise</Typography>
-        <BibUnit articles={your_need} status={'reviewedWaiting'} />
+        <BibUnit articles={your_need} status={'reviewedWaiting'} isLoggedIn={isLoggedIn} />
         <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>Others' Papers</Typography>
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Submitted Review</Typography>
-        <BibUnit articles={you_commented_papers} status={'enough'} />
+        <BibUnit articles={you_commented_papers} status={'enough'} isLoggedIn={isLoggedIn} />
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>Unsubmitted Review</Typography>
         <Footer />
       </div>

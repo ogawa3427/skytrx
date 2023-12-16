@@ -47,7 +47,7 @@ const Review = () => {
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
-      <BibUnit articles={article} status={'enough'} />
+      <BibUnit articles={article} status={'enough'} isLoggedIn={isLoggedIn} />
       <br />
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <div style={{ flex: 4, paddingRight: '10px' }}>
@@ -59,7 +59,7 @@ const Review = () => {
       </div>
       <OverallReview doi={doi}/>
       <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>References</Typography>
-      <BibUnit articles={references} status={'enough'}/>   
+      <BibUnit articles={references} status={'enough'} isLoggedIn={isLoggedIn} /> 
       <Footer />   
     </div>
   );
